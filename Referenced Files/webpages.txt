@@ -1,0 +1,24 @@
+lesson 06:
+XAMPP - apachefriends.org
+pixiJS - pixijs.com
+jquery boilerplate - jqueryboilerplate.com
+
+lesson 9
+box2dweb - code.google.com/p/box2dweb
+
+
+lesson 17
+GSAP - greensock.com
+
+
+
+lesson 26: 
+howlerJS : http://goldfirestudios.com/blog/104/howler.js-Modern-Web-Audio-Javascript-Library
+
+
+lesson 29: 
+banbuilder.com
+
+lesson 31
+keyboardJS : http://robertwhurst.github.io/KeyboardJS/
+
