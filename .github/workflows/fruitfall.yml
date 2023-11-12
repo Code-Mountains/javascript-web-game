@@ -12,28 +12,12 @@ jobs:
 
     steps:
 
-    - name: Running as user
-      run: |
-        echo $(whoami)@$(hostname)
-    
     - name: Check out repository code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12' # Set this to your Node.js version
-
-    - name: Install dependencies
-      run: | 
-        # CD into npm project directory
-        cd HTML5/End_34
-
-        npm install
-
     - name: Deploy node.js app via pm2 
       run: |
-        # Restart our node.js deployed using PM2 as fruitfall 
+        # Restart our Fruitfall Node.js app using PM2
         echo "Restarting NodeJS app using PM2"        
         pm2 restart fruitfall 
 
