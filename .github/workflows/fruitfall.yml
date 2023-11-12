@@ -25,10 +25,8 @@ jobs:
         node-version: '14' # Set this to your Node.js version
 
     - name: Install dependencies
-      run: npm install
-
-    - name: Build the project (if necessary)
-      run: npm run build # Remove this line if your project doesn't need a build step
+      run: | 
+        npm install
 
     - name: Show project repo folder structure
       run: |
