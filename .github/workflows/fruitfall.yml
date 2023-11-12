@@ -22,22 +22,22 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14' # Set this to your Node.js version
+        node-version: '12' # Set this to your Node.js version
 
     - name: Install dependencies
       run: | 
         npm install
 
-    - name: Show project repo folder structure
-      run: |
-        pwd
-        ls -thral
-        tree -L 2 
-
     - name: Deploy node.js app via pm2 
       run: |
-        git pull origin main
+        # CD into npm project directory
         cd HTML5/End_34
-        npm install
-        pm2 restart fruitfall
-        sudo systemctl restart nginx
+        
+        # Restart our node.js deployed using PM2 as fruitfall 
+        echo "Restarting NodeJS app using PM2"        
+        pm2 restart fruitfall 
+
+        # Restart Nginx web server and reverse proxy
+        echo "Restarting nginx web service and reverse proxy"
+        sudo systemctl restart nginx 
+        sudo systemctl status nginx 
