@@ -10,9 +10,11 @@ app.use(express.static(path.join(__dirname, '.')));
 app.get('/deployment-timestamp', (req, res) => {
   fs.readFile('deployment_timestamp.txt', 'utf8', (err, data) => {
     if (err) {
+      console.error('Error reading file: deployment_timestamp.txt' );
       console.error(err);
       return res.status(500).send('Error reading timestamp');
     }
+    console.log(data)
     res.send(data);
   });
 });
