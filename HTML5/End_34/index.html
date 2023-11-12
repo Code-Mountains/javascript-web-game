@@ -8,6 +8,12 @@
     content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scaleable=0"
   />
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- Bootstrap 3 CSS -->
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
@@ -35,7 +41,9 @@
       <canvas id="dbc" style="display: none"></canvas>
     </div>
 
-    <div id="deploymentTimestamp"></div>
+    <div id="deploymentTimestamp" class="well well-sm">
+      Last Deployed Date: <span id="timestamp"></span>
+    </div>
 
     <div id="game"></div>
 
@@ -61,10 +69,7 @@
       fetch("/deployment-timestamp")
         .then((response) => response.text())
         .then((data) => {
-
-          data = "Last Deployed Date: " + data
-
-          document.getElementById("deploymentTimestamp").innerText = data;
+          $("#timestamp").text(data);
         })
         .catch(console.error);
     </script>
