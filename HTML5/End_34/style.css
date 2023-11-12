@@ -1,21 +1,18 @@
+#container {
+	text-align: center;
+	/* Center align the inline-block elements */
+}
+
 #deploymentTimestamp,
 #currentTimestamp {
 	display: inline-block;
-	/* Make width adjust to content */
 	padding: 10px;
-	margin-top: 20px;
+	margin: 10px 0;
 	background-color: #f8f8f8;
-	/* Light grey background */
 	border: 1px solid #ddd;
-	/* Light grey border */
 	border-radius: 4px;
-	/* Rounded corners */
-	text-align: center;
-	/* Center align text */
 	font-size: 16px;
-	/* Larger font size */
 	color: #333;
-	/* Darker text color for readability */
 }
 
 /* Responsive adjustments */
@@ -24,14 +21,11 @@
 	#game,
 	#playButton {
 		width: 95%;
-		/* Full width on smaller screens */
-		padding: 10px;
 	}
 
 	#deploymentTimestamp,
 	#currentTimestamp {
 		display: block;
-		/* Full width on smaller screens */
 		width: 100%;
 	}
 }
