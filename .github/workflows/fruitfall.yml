@@ -1,4 +1,4 @@
-name: Deploy FruitFall Node.js App 
+name: Deploy FruitFall NodeJS App 
 
 on:
   push:
