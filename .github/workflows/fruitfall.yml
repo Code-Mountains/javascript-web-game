@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  deploy:
+  deploy_fruitfall_nodejs_app:
     runs-on: ["self-hosted","ub22"]  
 
     steps:
@@ -38,7 +38,10 @@ jobs:
         echo "Writing deployment_timestamp.txt file"
         echo "Last deployed on $(date)" > deployment_timestamp.txt
 
-        echo "Contents of deployment_timestamp.txt file:"
+        chmod a+r deployment_timestamp.txt
+
+        echo "Showing file permissions and contents of deployment_timestamp.txt file:"
+        ls -thral deployment_timestamp.txt
         cat deployment_timestamp.txt
 
     - name: Deploy node.js app via pm2 
