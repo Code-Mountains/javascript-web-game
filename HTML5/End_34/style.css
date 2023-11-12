@@ -82,3 +82,17 @@ body {
 		padding: 10px;
 	}
 }
+
+#currentTimestamp {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #f8f8f8;
+	/* Light grey background */
+	border-top: 1px solid #ddd;
+	/* Light grey border */
+	text-align: center;
+	padding: 10px;
+	font-size: 16px;
+}

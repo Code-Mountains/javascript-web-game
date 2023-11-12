@@ -45,11 +45,25 @@
       Last Deployed Date: <span id="timestamp"></span>
     </div>
 
+    <!-- Current Timestamp -->
+    <div id="currentTimestamp" class="well well-sm">
+      Current Time: <span id="currentTime"></span>
+    </div>
+
     <div id="game"></div>
 
     <button id="playButton">Play Audio</button>
 
     <script>
+      // Function to update current time every second
+      function updateCurrentTime() {
+        const now = new Date();
+        document.getElementById("currentTime").innerText = now.toLocaleString();
+      }
+
+      // Update time every second
+      setInterval(updateCurrentTime, 1000);
+
       $(document).ready(function () {
         $("#game").fruitFall();
 
