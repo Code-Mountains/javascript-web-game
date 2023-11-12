@@ -1,0 +1,39 @@
+name: Deploy FruitFall Node.js App 
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ["self-hosted","ub22"]  
+
+    steps:
+
+    - name: Running as user
+      run: |
+        echo $(whoami)@$(hostname)
+    
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # Set this to your Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build the project (if necessary)
+      run: npm run build # Remove this line if your project doesn't need a build step
+
+    - name: Deploy via SSH
+      run: |
+        cd /home/sysadmin/Documents/code/js/physics-based-web-game-javascript-html5-1913/HTML5/End_34
+        git pull origin main
+        npm install
+        pm2 restart fruitfall
+        sudo systemctl restart nginx
