@@ -33,6 +33,7 @@ jobs:
     - name: Deploy node.js app via pm2 
       run: |
         git pull origin main
+        cd HTML5/End_34
         npm install
         pm2 restart fruitfall
         sudo systemctl restart nginx
