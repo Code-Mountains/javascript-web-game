@@ -34,7 +34,12 @@ jobs:
     - name: Append Last Deploy Timestamp to web site
       run: |
         cd HTML5/End_34
-        echo "Last deployed on $(date)" > deployment_timestamp.txt        
+
+        echo "Writing deployment_timestamp.txt file"
+        echo "Last deployed on $(date)" > deployment_timestamp.txt
+
+        echo "Contents of deployment_timestamp.txt file:"
+        cat deployment_timestamp.txt
 
     - name: Deploy node.js app via pm2 
       run: |
