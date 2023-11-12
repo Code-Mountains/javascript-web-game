@@ -30,6 +30,12 @@ jobs:
     - name: Build the project (if necessary)
       run: npm run build # Remove this line if your project doesn't need a build step
 
+    - name: Show project repo folder structure
+      run: |
+        pwd
+        ls -thral
+        tree -L 2 
+
     - name: Deploy node.js app via pm2 
       run: |
         git pull origin main
