@@ -26,13 +26,13 @@ jobs:
 
     - name: Install dependencies
       run: | 
+        # CD into npm project directory
+        cd HTML5/End_34
+
         npm install
 
     - name: Deploy node.js app via pm2 
       run: |
-        # CD into npm project directory
-        cd HTML5/End_34
-        
         # Restart our node.js deployed using PM2 as fruitfall 
         echo "Restarting NodeJS app using PM2"        
         pm2 restart fruitfall 
