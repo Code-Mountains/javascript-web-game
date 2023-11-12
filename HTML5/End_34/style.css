@@ -54,7 +54,7 @@ body {
 	position: absolute;
 }
 
-#deploymentTimestamp {
+#deploymentTimestamp, #currentTimestamp  {
 	padding: 10px;
 	margin-top: 20px;
 	background-color: #f8f8f8;
@@ -70,6 +70,7 @@ body {
 	color: #333;
 	/* Darker text color for readability */
 }
+
 
 #game {
 	margin: 20px auto;
@@ -102,19 +103,4 @@ body {
 #playButton:hover {
 	background-color: #286090;
 	/* Darker shade on hover */
-}
-
-
-#currentTimestamp {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: #f8f8f8;
-	/* Light grey background */
-	border-top: 1px solid #ddd;
-	/* Light grey border */
-	text-align: center;
-	padding: 10px;
-	font-size: 16px;
 }
