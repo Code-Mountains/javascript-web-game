@@ -35,6 +35,8 @@
       <canvas id="dbc" style="display: none"></canvas>
     </div>
 
+    <div id="deploymentTimestamp"></div>
+
     <div id="game"></div>
 
     <button id="playButton">Play Audio</button>
@@ -54,6 +56,14 @@
             sound.play();
           });
       });
+
+      // Fetch and display the deployment timestamp
+      fetch("/deployment-timestamp")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("deploymentTimestamp").innerText = data;
+        })
+        .catch(console.error);
     </script>
   </body>
 </html>

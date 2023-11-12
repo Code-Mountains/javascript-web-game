@@ -31,6 +31,11 @@ jobs:
 
         npm install
 
+    - name: Append Last Deploy Timestamp to web site
+      run: |
+        cd HTML5/End_34
+        echo "Last deployed on $(date)" > deployment_timestamp.txt        
+
     - name: Deploy node.js app via pm2 
       run: |
         # Restart our node.js deployed using PM2 as fruitfall 
