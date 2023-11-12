@@ -31,19 +31,6 @@ jobs:
 
         npm install
 
-    - name: Append Last Deploy Timestamp to web site
-      run: |
-        cd HTML5/End_34
-
-        echo "Writing deployment_timestamp.txt file"
-        echo "Last deployed on $(date)" > deployment_timestamp.txt
-
-        chmod a+r deployment_timestamp.txt
-
-        echo "Showing file permissions and contents of deployment_timestamp.txt file:"
-        ls -thral deployment_timestamp.txt
-        cat deployment_timestamp.txt
-
     - name: Deploy node.js app via pm2 
       run: |
         # Restart our node.js deployed using PM2 as fruitfall 

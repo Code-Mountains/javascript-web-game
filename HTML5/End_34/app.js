@@ -6,18 +6,13 @@ const app = express();
 // Serve static files from the current directory
 app.use(express.static(path.join(__dirname, '.')));
 
-// Add a route to get the deployment timestamp
+// Add a route to get the current timestamp
 app.get('/deployment-timestamp', (req, res) => {
-  fs.readFile('deployment_timestamp.txt', 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading file: deployment_timestamp.txt' );
-      console.error(err);
-      return res.status(500).send('Error reading timestamp');
-    }
-    console.log(data)
-    res.send(data);
-  });
+  const now = new Date();
+  const timestamp = now.toLocaleString(); // Format date and time in a human-readable format
+  res.send(timestamp);
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
