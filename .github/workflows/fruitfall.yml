@@ -1,10 +1,12 @@
 name: Deploy FruitFall NodeJS App 
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  workflow_dispatch:
+    
+  # push:
+  #   branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
 
 jobs:
   deploy_fruitfall_nodejs_app:
